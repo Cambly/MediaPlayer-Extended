@@ -463,6 +463,7 @@ public class MediaPlayer {
         if(mPlaybackThread != null) {
             mPlaybackThread.release();
             mPlaybackThread.quitSafelyCompat();
+            mEventHandler.removeCallbacksAndMessages(null);
             mPlaybackThread = null;
         }
         stayAwake(false);
